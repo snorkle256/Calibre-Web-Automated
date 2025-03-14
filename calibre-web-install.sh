@@ -17,8 +17,14 @@ LABEL CW-Stock-version="${CALIBREWEB_RELEASE}"
 LABEL LSCW_Image_Release="${LSCW_RELEASE}"
 LABEL maintainer="CrocodileStick"
 
+
+
 # Copy local files into the container
-COPY --chown=abc:abc . /app/calibre-web-automated/
+#COPY --chown=abc:abc . /app/calibre-web-automated/
+#Instead pull down root files
+
+curl -fsSLO https://github.com/snorkle256/Calibre-Web-Automated/tree/de27dd98baf2f094aea1dadbc13359210883bb49/root/
+
 
 # STEP 1 - Install stock Calibre-Web
 RUN \
